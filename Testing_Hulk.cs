@@ -93,4 +93,4 @@
  //if(2<1 | 2<2 ) 2 else let x1="lets", x2="_get" in ( x1+x2 ) + print("_loud") ;  aunswer: lets_get_loud
  //let x="lala" in ( x+ if(2>3) "_land" else 3 );
  //30*2 + 30* let x=30*2 in (x-60) * let x=2 in (x) + 2 + if(2<3) 3 else 9;
- 
+ //15 - log(25,5)*7 + 13/print(13)*2; answer: 3

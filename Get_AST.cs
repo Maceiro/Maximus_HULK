@@ -7,7 +7,7 @@
    public static Expr_Or_Stat To_AST( Node node ) {
 
   if( node.Symbol== "print_stat")  return new Print( To_AST( node.Children[2] ) );
-  if( node.Symbol== "if_else")  return new If_Else( ( (Boolean_Expression)To_AST( node.Children[2]) ), To_AST( node.Children[4]), To_AST( node.Children[6]) );
+  if( node.Symbol== "if_else")  return new If_Else( ( To_AST( node.Children[2]) ), To_AST( node.Children[4]), To_AST( node.Children[6]) );
   if( node.Symbol== "def_func") return new Def_Func( (ID)To_AST( node.Children[1]), ((List_Node<ID>)To_AST( node.Children[3])).Descompress() , To_AST( node.Children[6]) ) ;
   if( node.Symbol== "statement" || node.Symbol=="line" ) return To_AST( node.Children[0] ) ;
   if( node.Symbol=="Number") return new Number( node.Chain );

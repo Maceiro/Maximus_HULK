@@ -71,8 +71,8 @@
 
     public void Introduce_Functions() {
 
-     string[] names= { "sin", "cos" } ;
-     int[]args= { 1, 1 } ;
+     string[] names= { "sin", "cos", "log" } ;
+     int[]args= { 1, 1, 2 } ;
      for( int i=0; i< names.Length; i++) 
       Define( names[i], args[i], null ) ;
       

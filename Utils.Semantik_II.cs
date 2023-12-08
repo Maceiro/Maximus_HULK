@@ -36,6 +36,9 @@
       case "/":
       temp= acum/op ;
       break;
+      case "%":
+      temp= acum%op ;
+      break;
      }
 
     if( !expr.Is_Product() ) return new Bool_Object( true, temp );
@@ -49,7 +52,7 @@
 
     if ( !(expr is Binary_Operation) )  return false;
     string op= ((Binary_Operation)expr).Op ; 
-    return op=="*"  || op=="/"  ;
+    return op=="*"  || op=="/" || op=="%" ;
 
    }
 

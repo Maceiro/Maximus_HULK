@@ -27,11 +27,11 @@ public class Assignment : Statement {
 
   public class If_Else : Statement  {
 
-   public Boolean_Expression Condition ;
+   public Expr_Or_Stat Condition ;
    public Expr_Or_Stat if_part ; 
    public Expr_Or_Stat else_part ;
 
-   public If_Else( Boolean_Expression condition, Expr_Or_Stat if_part, Expr_Or_Stat else_part ) {
+   public If_Else( Expr_Or_Stat condition, Expr_Or_Stat if_part, Expr_Or_Stat else_part ) {
 
     Condition= condition ;
     this.if_part= if_part ;
@@ -44,8 +44,12 @@ public class Assignment : Statement {
     if( Validate_Only ) return new Bool_Object( Condition.Validate( context, true ).Bool && if_part.Validate( context, true ).Bool && else_part.Validate( context, true ).Bool, null ) ; 
     
     var pair= Condition.Validate( context, Validate_Only ) ;
-    if( !pair.Bool ) return new Bool_Object( false, null ) ;
-
+    if( pair.Object==null ) return new Bool_Object( false, null ) ;
+    if( !(pair.Object is bool) ) {
+      
+      Operation_System.Print_in_Console( "Dentro de la parte \"condition\" de una instruccion \"if\" tiene que estar una expression que compute boolean");
+      return new Bool_Object(false, null);
+    }
     var value= (bool)pair.Object ;
     if( value ) return if_part.Validate( context, Validate_Only );
     else return else_part.Validate( context, Validate_Only ) ;

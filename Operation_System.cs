@@ -63,6 +63,7 @@ public class Operation_System  {
     do {
 
     s= Console.ReadLine() ;
+    if( s=="finish") break;
     Validate_Program( s );
     }
     while( s!= "finish");

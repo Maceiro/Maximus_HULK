@@ -60,6 +60,8 @@ public abstract class Semantik_Node {
      var pair_left= Left.Validate(context, Validate_Only ); 
      var pair_right= Right.Validate(context, Validate_Only ) ; 
      if( !( pair_left.Bool && pair_right.Bool )  ||  ( pair_left.Object== null || pair_right.Object== null ) )  return new Bool_Object( false, null );
+       
+      if( Op=="@" ) return new Bool_Object( true, pair_left.Object.ToString() + pair_right.Object.ToString() );
 
       if( !pair_left.Same_Type( pair_right ) ) {
 
@@ -171,6 +173,21 @@ public abstract class Semantik_Node {
 
      }
 
+     if( name=="log") {
+
+       var number= list[0].Validate( context, false).Object;
+       var base_log= list[1].Validate( context, false).Object;
+       if( number== null || base_log== null ) return new Bool_Object(false, null);
+       if( !( number is double) || !( base_log is double) ) {
+         
+         Operation_System.Print_in_Console( " Los argumentos de la funcion \"log\" solo pueden ser numeros");
+         return new Bool_Object( false, null);
+       }
+
+       return new Bool_Object( true, Math.Log( (double)number, (double)base_log ) );
+
+     }
+
      return new Bool_Object( false, null ) ;
     }
 
@@ -196,8 +213,8 @@ public abstract class Semantik_Node {
 
     public bool Is_Predeterm( int cant ) {
 
-      string[] names= { "sin", "cos" } ;
-      int[]args= { 1, 1 } ;
+      string[] names= { "sin", "cos", "log" } ;
+      int[]args= { 1, 1, 2 } ;
       for( int i=0; i< names.Length; i++) 
         if( Name ==names[i] && cant==args[i] ) return true ;
 

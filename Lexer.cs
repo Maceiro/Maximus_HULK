@@ -45,7 +45,7 @@ public class Lexer {
 
      if( tokens[i].Class== "ID" || tokens[i].Class=="Op" ) 
       switch( tokens[i].Chain ) {
-        case "print": case "let": case "in": case "if": case "else": case "function": case "<": case ">": case "<=": case ">=": case "==": case "!=": case "!": case "+": case "-": case "*": case "/" : case "^" : case "=": case "|" : case "&" :
+        case "print": case "let": case "in": case "if": case "else": case "function": case "<": case ">": case "<=": case ">=": case "==": case "!=": case "!": case "@": case "+": case "-": case "*": case "/" : case "^" : case "%" : case "=": case "|" : case "&" :
         tokens[i].Class= tokens[i].Chain ;
         break;
         case "true": case "false": 
@@ -64,7 +64,7 @@ public class Lexer {
       
        if( tokens[i].Class== "ID" || tokens[i].Class=="Op" ) 
       switch( tokens[i].Chain ) {
-        case "print": case "let": case "in": case "if": case "else": case "function": case "<": case ">": case "<=": case ">=": case "==": case "!=": case "!": case "+": case "-": case "*": case "/" : case "^" : case "=":
+        case "print": case "let": case "in": case "if": case "else": case "function": case "<": case ">": case "<=": case ">=": case "==": case "!=": case "!": case "@": case "+": case "-": case "*": case "/" : case "^" : case "%" : case "=": case "|" : case "&" :
         tokens[i].Class= tokens[i].Chain ;
         break;
         case "true": case "false": 
