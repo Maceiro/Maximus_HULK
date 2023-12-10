@@ -126,7 +126,7 @@
       if( node.Is_Epsilon() ) return true ;
       if( node.Symbol!= tokens[index].Class ) {
 
-        Operation_System.Print_in_Console( string.Format("Sintactic Error: Are you missing a {0} token after {1} token ? The error happen after {2}th caracter", node.Symbol, tokens[index-1].Class, tokens[index].Cursor-1 )  );
+        Operation_System.Print_in_Console( string.Format("Sintactic Error: Are you missing \"{0}\" token after \"{1}\" token ? The error happened after {2}th caracter", node.Symbol, tokens[index-1].Class, tokens[index].Cursor-1 )  );
         return false ;
       }
       node.Chain=tokens[index].Chain ;
@@ -143,12 +143,12 @@
  
      if( node.Symbol!="list_arg") {
 
-     if(index-1>=0) Operation_System.Print_in_Console( string.Format("Sintactic Error: Expression missing after {0} token. The error happen after {1}th caracter", tokens[index-1].Class, tokens[index-1].Cursor ));
-     else Operation_System.Print_in_Console( "Sintactic Error: Expression missing in the begining of the instruction");
+     if(index-1>=0) Operation_System.Print_in_Console( string.Format("Sintactic Error: Expression missing after {0} token. The error happened after {1}th caracter", tokens[index-1].Class, tokens[index-1].Cursor ));
+     else Operation_System.Print_in_Console( "Sintactic Error: Expression missing in the beginning of the instruction");
     
      }
 
-     else Operation_System.Print_in_Console( string.Format("Sintactic Error: Only IDs can be consider as arguments in a Function_Declaration instruction. The error happen after {0}th caracter", tokens[index-1].Cursor+1 ));
+     else Operation_System.Print_in_Console( string.Format("Sintactic Error: Only IDs can be considered as arguments in a Function_Declaration instruction. The error happened after {0}th caracter", tokens[index-1].Cursor+1 ));
     }
      
      return false;
@@ -286,24 +286,24 @@
       switch( context.Get_Sintax_Context()) {
 
       case "if":
-      Operation_System.Print_in_Console( string.Format("Missing_operator or missing \")\" token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
+      Operation_System.Print_in_Console( string.Format("Missing_operator or missing \")\" token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
       break;
       case "else":
-      Operation_System.Print_in_Console( string.Format("Missing operator or \"else\" token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
+      Operation_System.Print_in_Console( string.Format("Missing operator or \"else\" token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
       break;
       case "let":
-      if(aux=="ID") Operation_System.Print_in_Console( string.Format("Missing_operator or \", \" token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
-      else Operation_System.Print_in_Console( string.Format("Missing_operator token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
+      if(aux=="ID") Operation_System.Print_in_Console( string.Format("Missing operator or \", \" token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
+      else Operation_System.Print_in_Console( string.Format("Missing_operator token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
       break;
       case "expression":
-      Operation_System.Print_in_Console( string.Format("Missing_operator token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
+      Operation_System.Print_in_Console( string.Format("Missing operator token after {0} token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
       break; 
       case "func_call":
-      Operation_System.Print_in_Console( string.Format("Missing_operator or missing , token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
+      Operation_System.Print_in_Console( string.Format("Missing operator or missing \",\" token after {0} token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
       break;
       case "def_func":
-      if(aux=="ID") Operation_System.Print_in_Console( string.Format("Missing \", \" token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
-      else Operation_System.Print_in_Console( string.Format("Only IDs can be consider as arguments in a Function_Definition instruction. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor ) );
+      if(aux=="ID") Operation_System.Print_in_Console( string.Format("Missing \", \" token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1 ) );
+      else Operation_System.Print_in_Console( string.Format("Only IDs can be considered as arguments in a Function_Definition instruction. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor ) );
       break;
    
    }
@@ -312,19 +312,19 @@
     switch( context.Get_Sintax_Context()) {
 
       case "if":
-      Operation_System.Print_in_Console( string.Format("Missing operator-token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
+      Operation_System.Print_in_Console( string.Format("Missing operator-token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
       break;
       case "else":
-      Operation_System.Print_in_Console( string.Format("Missing operator or \"else\" token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
+      Operation_System.Print_in_Console( string.Format("Missing operator or \"else\" token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
       break;
       case "let":
-      Operation_System.Print_in_Console( string.Format("Missing operator or \"in\" token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
+      Operation_System.Print_in_Console( string.Format("Missing operator or \"in\" token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
       break;
       case "func_call":
-      Operation_System.Print_in_Console( string.Format("Missing operator or missing \",\" token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
+      Operation_System.Print_in_Console( string.Format("Missing operator or missing \",\" token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
       break;
       case "expression":
-      Operation_System.Print_in_Console( string.Format("Missing_operator token after {0} token. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
+      Operation_System.Print_in_Console( string.Format("Missing_operator token after \"{0}\" token. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor-1) );
       break;
 
     }
@@ -333,7 +333,7 @@
     switch( context.Get_Sintax_Context()) {
 
       case "def_func":
-      Operation_System.Print_in_Console( string.Format("Operations can't be consider as arguments in a Function_Definition instruction. The error happen in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor ) );
+      Operation_System.Print_in_Console( string.Format("Operations can't be considered as arguments in a Function_Definition instruction. The error happened in {1}th caracter", tokens[index-1].Class, tokens[index].Cursor ) );
       break;
   
     }

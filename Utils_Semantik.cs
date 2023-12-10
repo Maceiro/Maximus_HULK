@@ -78,6 +78,12 @@
       
     }
 
+    public void Introduce_Variable() {
+
+      Define( "PI", Math.PI);
+    }
+
+
     public void Introduce_Sintax_Context( Node node ) {
       
       if( node.Symbol=="if") sintax_context.Push("if");

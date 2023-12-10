@@ -59,8 +59,14 @@ public abstract class Semantik_Node {
      if( this.Is_Product() ) return this.Obtain_Value( context) ;
      var pair_left= Left.Validate(context, Validate_Only ); 
      var pair_right= Right.Validate(context, Validate_Only ) ; 
-     if( !( pair_left.Bool && pair_right.Bool )  ||  ( pair_left.Object== null || pair_right.Object== null ) )  return new Bool_Object( false, null );
+     if( !( pair_left.Bool && pair_right.Bool )  )  return new Bool_Object( false, null );
+      if( pair_left.Object== null || pair_right.Object== null ) {
+
+        Operation_System.Print_in_Console( "Semantik Error: Ambos operandos deben retornar alguna expresion");
+        return new Bool_Object( false, null );
+      }
        
+
       if( Op=="@" ) return new Bool_Object( true, pair_left.Object.ToString() + pair_right.Object.ToString() );
 
       if( !pair_left.Same_Type( pair_right ) ) {

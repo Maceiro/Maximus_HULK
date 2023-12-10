@@ -12,6 +12,7 @@ public class Operation_System  {
    if( Semantik_Analysis.Context== null ) {
     Semantik_Analysis.Context= new Context() ;
     Semantik_Analysis.Context.Introduce_Functions() ; 
+    Semantik_Analysis.Context.Introduce_Variable();
    }
 
    Semantik_Analysis.Context.Clean_Sintax();
@@ -27,7 +28,7 @@ public class Operation_System  {
      var t= Obtain_AST( aux ) ; 
      if( !t.Item2 ) return false ; 
      var sub_tree= t.Item1 ;
-     Console.WriteLine("AST_Completed");
+     //Console.WriteLine("AST_Completed");
      
      var pair= sub_tree.Validate( Semantik_Analysis.Context, false ) ;
      if( !pair.Bool) return false ;

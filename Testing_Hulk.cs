@@ -3,6 +3,8 @@
 
   public static void Main() {
   
+  Console.WriteLine( "Welcome to Hulk!!!!!!!!!!!!");
+  Console.WriteLine( "Al final de la clase Testing_Hulk encontrara algunos casos de prueba para que se familiarice con el lenguaje y ponga a prueba su potencial de computo");
   Operation_System.Interface() ;
   
   }
@@ -92,5 +94,10 @@
  //let x=2 in (2) + print(2)/if(2<3) 2 else 1;
  //if(2<1 | 2<2 ) 2 else let x1="lets", x2="_get" in ( x1+x2 ) + print("_loud") ;  aunswer: lets_get_loud
  //let x="lala" in ( x+ if(2>3) "_land" else 3 );
- //30*2 + 30* let x=30*2 in (x-60) * let x=2 in (x) + 2 + if(2<3) 3 else 9;
+ //30*2 + 30* let x=30*2 in (x-60) * let x=2 in (x) + 2 + if(2<3) 3 else 9; answer: 65
  //15 - log(25,5)*7 + 13/print(13)*2; answer: 3
+ // 2<3 & function Sum()=> 2;
+ //function Sum(2+4, s*2)=> true;
+ //sin(PI)* log(25,5);
+ //sin(PI)* log(25,5) @ "lala";
+ //function Ti(x+y)=> 2;
